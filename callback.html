@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Callback</title>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const authorizationCode = urlParams.get('code');
+
+            if (authorizationCode) {
+                document.getElementById('result').textContent = 'Authorization code: ' + authorizationCode;
+                // Further processing here, such as sending the code to a backend service
+            } else {
+                document.getElementById('result').textContent = 'No authorization code found';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>OAuth Callback Page</h1>
+    <p id="result"></p>
+</body>
+</html>
